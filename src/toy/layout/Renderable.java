@@ -1,7 +1,10 @@
 package toy.layout;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import toy.dom.Element;
 import toy.dom.Node;
@@ -39,6 +42,14 @@ public class Renderable {
     }
 
     void layout() {
-    	
+    	Dimension screensize = Toolkit.getDefaultToolkit().getScreenSize();
+    	double max_width = screensize.getWidth();
+    	double current_pos = 0;
+    	List<Map<String,Integer>> lines;
+    	for(final Renderable child: this.RChildren) {
+    		if(child.domNode instanceof Element && child.domNode.attribute.get("display") == "block" ) {
+    			lines.add(1++);
+    		}
+    	}
     }
 }
