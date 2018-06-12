@@ -28,7 +28,6 @@ public class Element extends Node {
         final Element elementChild = (Element) child;  
         self.addChild(elementChild.createRenderTree());
       } else if (child instanceof Text) {
-        //final Text textChild = (Text) child;
         self.addChild(new RText(child));
       }
     }
