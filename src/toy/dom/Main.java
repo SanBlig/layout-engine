@@ -33,5 +33,8 @@ public class Main {
         System.out.println();
         System.out.println("Render Tree:");
         renderable.dumpTree(1);
+        text.createList();
+        Renderable renderable_text = div.createRenderTree();
+        renderable_text.layout();
     }
 }

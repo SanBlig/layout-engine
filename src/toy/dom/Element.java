@@ -10,7 +10,7 @@ import toy.layout.Renderable;
 
 public class Element extends Node {
 
-  Map<String, String> attribute = new HashMap<String, String>();
+  public Map<String, String> attribute = new HashMap<String, String>();
 
   Element(final String type, final String name) {
     nodeType = type;
@@ -25,7 +25,7 @@ public class Element extends Node {
     Renderable self = (this.attribute.get("display") != "inline") ? new RBlock(this) : new RInline(this); 
     for (final Node child : this.children) {
       if (child instanceof Element) {
-        final Element elementChild = (Element) child;  
+        final Element elementChild = (Element) child;
         self.addChild(elementChild.createRenderTree());
       } else if (child instanceof Text) {
         self.addChild(new RText(child));
